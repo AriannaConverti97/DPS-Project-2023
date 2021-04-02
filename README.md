@@ -9,6 +9,9 @@ TODO
 
 * If required, trust the project and accept the Gradle auto-import
 
+* Wait until the Gradle indexing process ends (it may take a few seconds)
+
+
 
 ## ENJOY THE PROJECT!
 

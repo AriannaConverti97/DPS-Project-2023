@@ -21,6 +21,8 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.grpc/grpc-all
     compile group: 'io.grpc', name: 'grpc-all', version: '1.25.0'
+    
+    compile 'com.google.code.gson:gson:2.8.6'
 
     // REST Dependencies
     // https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-core-asl

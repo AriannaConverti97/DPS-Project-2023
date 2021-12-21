@@ -1,7 +1,7 @@
 # Project Setup
 
 * You can import the project directly from a *Version Control System*, by providing the following URL: 
-TODO
+*https://ewserver.di.unimi.it/gitlab/luca.arrotta/project_setup.git*
 
 <img src = './assets/img_1.png'>
 

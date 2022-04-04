@@ -15,6 +15,6 @@
 
 ## ENJOY THE PROJECT!
 
-<img src = './assets/meme.PNG' width="350" height="500">
+<img src = './assets/meme.jpg' width="350" height="500">
 
 

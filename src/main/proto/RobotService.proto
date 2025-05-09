@@ -1,0 +1,82 @@
+package proto.classes;
+
+//Insertion
+message HelloRobot{
+  required int32 id=1;
+  required uint32 port=2;
+
+  message Coordinate{
+    required int32 x=1;
+    required int32 y=2;
+  }
+  required Coordinate position = 3;
+  required int32 district = 4;
+  optional int32 clock=5;
+}
+
+//Change Coordinate
+message RobotNewCoordinate{
+  required int32 newDistrict=1;
+  required int32 id=2;
+  required int32 clock=3;
+}
+message RobotNewCoordinateResponse{
+  required int32 id = 1;
+  required int32 clock=3;
+}
+
+// Richart and Agrawal
+message MecReq{
+  required int32 id=1;
+  required int32 port = 2;
+  required int32 fixClock=3;
+  required int32 clock=4;
+}
+
+message MecResp{
+  required int32 id=1;
+  required int32 status=2;
+  required int32 clock=3;
+}
+
+message ACK{
+  required int32 id=1;
+  required int32 clock=3;
+}
+
+
+//GOODBYE
+message ByeMex{
+  required int32 id=1;
+  required int32 clock=2;
+}
+
+//AreYouAlive
+message AreYouAliveMex{
+  required int32 id=1;
+  required int32 clock=2;
+}
+
+message DeadRobotMex{
+  required int32 senderId=1;
+  required int32 faultyRobotId=2;
+  required  int32 faultyClock=3;
+  required int32 clock=4;
+}
+
+message BalanceMex{
+  required int32 status=1;
+  required int32 clock=4;
+  required int32 district=2;
+  required int32 port = 3;
+}
+
+service RobotService{
+  rpc sayHello(HelloRobot) returns (ACK);
+  rpc goodbye(ByeMex) returns (ByeMex);
+  rpc mechanicRequest(MecReq) returns (MecResp);
+  rpc mechanicReply(MecResp) returns (ACK);
+  rpc areYouAlive(AreYouAliveMex) returns (AreYouAliveMex);
+  rpc deadRobot(DeadRobotMex) returns (BalanceMex);
+  rpc balanceCity(RobotNewCoordinate) returns (RobotNewCoordinateResponse);
+}
